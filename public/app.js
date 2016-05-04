@@ -10,6 +10,10 @@ function Config($stateProvider, $urlRouterProvider, $locationProvider) {
     url: '/login',
     templateUrl: './public/views/login.html'
   }).
+  state('Signup',{
+    url: '/signup',
+    templateUrl: './public/views/signup.html'
+  }).
   state('Home',{
     url: '/home',
     templateUrl: './public/views/home.html'

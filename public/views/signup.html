@@ -1,14 +1,14 @@
-<div ng-controller="loginController">
+<div ng-controller="signupController">
 <!--APP TITLE-->
 <div class="login-background">
   <div class="content has-text-centered">
-    <h1 class="app_name">Rapid Recipe</h1>
+    <h1 class="app_name" ui-sref="Login">Rapid Recipe</h1>
   </div>
 <!--LOGIN FORM-->
 	<div class="columns">
   		<div class="column is-4 is-offset-4">
     		<div class="box">
-            <p class="title is-5">Login</p>
+            <p class="title is-5">New Account</p>
             <a class="button is-large is-fullwidth fb-btn">
               <span class="icon">
                 <i class="fa fa-facebook"></i>
@@ -31,11 +31,7 @@
                 ng-model="password">
               <i class="fa fa-lock"></i>
 				    </p>
-            <a ng-click="login()" class="button is-outlined is-large login-btn">Login</a>
+            <a ng-click="signup()" class="button is-outlined is-large login-btn">Submit</a>
     		</div>
   		</div>
 	</div>
-  <div class="has-text-centered">
-    <p>Don't have an account? <a class="signup-btn" ui-sref="Signup">Signup</a></p>
-  </div>
-</div>

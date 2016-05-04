@@ -2,8 +2,8 @@
 (function() {
   'use strict';
   angular.module('rapidrecipe')
-  .controller('loginController', loginController);
-  loginController.$inject = [
+  .controller('signupController', signupController);
+  signupController.$inject = [
     'Food',
     'User',
     '$state',
@@ -13,7 +13,7 @@
     '$window'
   ];
 
-  function loginController(
+  function signupController(
     Food, 
     User,
     $state, 
@@ -24,13 +24,13 @@
     )
   {
 
-    $scope.login = function() {
+    $scope.signup = function() {
       var userInfo = {
         email: $scope.email,
         password: $scope.password
       };
 
-      User.login(userInfo).then(function(res){
+      User.signup(userInfo).then(function(res){
         $state.go('Home');
       });
     };
