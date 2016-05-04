@@ -1,0 +1,41 @@
+<div ng-controller="loginController">
+<!--APP TITLE-->
+<div class="login-background">
+  <div class="content has-text-centered">
+    <h1 class="app_name">Rapid Recipe</h1>
+  </div>
+<!--LOGIN FORM-->
+	<div class="columns">
+  		<div class="column is-4 is-offset-4">
+    		<div class="box">
+            <p class="title is-5">Login</p>
+            <a class="button is-large is-fullwidth fb-btn">
+              <span class="icon">
+                <i class="fa fa-facebook"></i>
+              </span>
+              <span>Facebook</span>
+            </a>
+      			<p class="control has-icon">
+  					  <input 
+                class="input is-large" 
+                type="email" 
+                placeholder="Email"
+                ng-model="email">
+  					  <i class="fa fa-envelope"></i>
+            </p>
+            <p class="control has-icon">
+              <input 
+                class="input is-large" 
+                type="password" 
+                placeholder="Password"
+                ng-model="password">
+              <i class="fa fa-lock"></i>
+				    </p>
+            <a ng-click="login()" class="button is-outlined is-large login-btn">Login</a>
+    		</div>
+  		</div>
+	</div>
+  <div class="has-text-centered">
+    <p>Don't have an account? <a class="signup-btn">Signup</a></p>
+  </div>
+</div>

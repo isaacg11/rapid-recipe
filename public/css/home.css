@@ -1,0 +1,31 @@
+html, body{
+	font-family: 'Righteous', cursive;
+}
+
+/*LOGIN*/
+/*.login-background{
+	background-color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100vh;
+    padding-top: 100px;
+}*/
+.app_name{
+	margin-top: 100px;
+	color: #ff6600 !important;
+}
+
+.fb-btn{
+	margin-bottom: 10px;
+	background-color: #fff;
+	color: #ff6600;
+}
+.login-btn{
+	background-color: #fff;
+	color: #ff6600;
+}
+.signup-btn{
+	color: #ff6600;
+}

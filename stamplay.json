@@ -1,0 +1,10 @@
+{
+  "appId": "rapidrecipe",
+  "apiKey": "95c5f132b1a196892463be941e29acd7f4dc41b0254e3d68ac7f75e3c2fec3f4",
+  "public": "./",
+  "ignore": [
+    "stamplay.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
