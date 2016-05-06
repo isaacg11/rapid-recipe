@@ -24,13 +24,18 @@
     )
   {
 
-  var getRecipes = function(){
-    Stamplay.Codeblock("recipes").run()
-    .then(function(err, res) {
-      console.log(res);// success
+  $scope.search = function(query) {
+    var data = {
+      query : query.text
+    };
+
+    Stamplay.Codeblock("recipes").run(data)
+    .then(function(err) {
+      console.log(err);
+      // success
     }, function(err) {
-      console.log(err);// error
-    }); 
+      // error
+    });
   };
 
 
