@@ -24,7 +24,15 @@
     )
   {
 
-    $scope.hello = 'helloWorld';
+  var getRecipes = function(){
+    Stamplay.Codeblock("recipes").run()
+    .then(function(err, res) {
+      console.log(res);// success
+    }, function(err) {
+      console.log(err);// error
+    }); 
+  };
+
 
   }
   })();

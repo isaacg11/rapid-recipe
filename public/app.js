@@ -6,19 +6,12 @@
 
 
 function Config($stateProvider, $urlRouterProvider, $locationProvider) {
-  $stateProvider.state('Login',{
-    url: '/login',
-    templateUrl: './public/views/login.html'
-  }).
-  state('Signup',{
-    url: '/signup',
-    templateUrl: './public/views/signup.html'
-  }).
-  state('Home',{
-    url: '/home',
+  $stateProvider.state('Home',{
+    url: '/',
     templateUrl: './public/views/home.html'
   });
-  $urlRouterProvider.otherwise('/login');
+  
+  $urlRouterProvider.otherwise('/');
   // $locationProvider.html5Mode(true);
   }
 

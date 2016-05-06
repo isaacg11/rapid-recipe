@@ -1,5 +1,51 @@
 <div ng-controller="homeController">
 
-	<p>{{hello}}</p>
-	
+<!--SEARCH SECTION-->
+<div class="bg-cover">
+	<div class="columns">
+		<div class="column is-6 is-offset-3">
+			<h1 class="title is-1 has-text-centered white">Rapid Recipe</h1>
+			<h5 class="title is-5 has-text-centered white">Quickly find a variety of delicous recipes for your next meal!</h5>
+			<form ng-submit="search()">
+				<p class="control has-icon has-icon-right search-input">
+  				<input 
+  					class="input is-large" 
+  					type="text" 
+  					placeholder="Enter recipe type or ingredients (beef, eggs, etc,.)">
+  					<i class="fa fa-search"></i>
+				</p>
+				<a type='submit' value="Submit" class="hide"></a>
+			</form>
+		</div>
+	</div>	
+</div>
+
+<!--POPULAR EATS-->
+<h1 class="title is-2 has-text-centered header-popular">Popular eats</h1>
+<h1 class="title is-5 has-text-centered">Top picks of trending recipes</h1>
+
+<div class="columns">
+  <div class="column">
+  </div>
+  <div class="column">
+    <img src="public/images/chicken-parm.jpeg" class="grid-img"/>
+    <p>Chick Parmesan</p>
+  </div>
+  <div class="column">
+    <img src="public/images/orange-chicken.jpg" class="grid-img"/>
+    <p>Orange Chicken</p>
+  </div>
+  <div class="column">
+    <img src="public/images/nachos.jpg" class="grid-img"/>
+    <p>Nachos Supreme</p>
+  </div>
+  <div class="column">
+    <img src="public/images/burger.jpg" class="grid-img"/>
+    <p>Perfect Burger</p>
+  </div>
+  <div class="column">
+  </div>
+</div>
+
+
 </div>

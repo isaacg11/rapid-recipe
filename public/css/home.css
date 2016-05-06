@@ -1,31 +1,29 @@
-html, body{
-	font-family: 'Righteous', cursive;
+/*HELPERS*/
+html, body {
+	font-family: "Righteous";
+}
+.white{
+	color: #fff;
+}
+.hide{
+	height: 0px !important;
 }
 
-/*LOGIN*/
-/*.login-background{
-	background-color: #fff;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 100vh;
-    padding-top: 100px;
-}*/
-.app_name{
-	margin-top: 100px;
-	color: #ff6600 !important;
+/*HOME PAGE*/
+.bg-cover{
+	padding-top: 150px;
+	background-image: url('/public/images/cooking1.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 60vh;
 }
-
-.fb-btn{
-	margin-bottom: 10px;
-	background-color: #fff;
-	color: #ff6600;
+.search-input{
+	margin-top: 60px;
 }
-.login-btn{
-	background-color: #fff;
-	color: #ff6600;
+.header-popular{
+	margin-top: 40px;
 }
-.signup-btn{
-	color: #ff6600;
+.grid-img{
+	height: 150px;
+	width: 100%;
 }
