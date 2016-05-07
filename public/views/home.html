@@ -1,5 +1,4 @@
 <div ng-controller="homeController">
-
 <!--SEARCH SECTION-->
 <div class="bg-cover">
 	<div class="columns">
@@ -20,51 +19,39 @@
 		</div>
 	</div>	
 </div>
-
 <!--POPULAR EATS-->
-<h1 class="title is-2 has-text-centered header-popular">Popular eats</h1>
-<h1 class="title is-5 has-text-centered">Top picks of trending recipes</h1>
-<div class="columns">
-  	<div class="column">
-  	</div>
-  	<div class="column">
-  		<a target="_blank"
-    		href="http://www.foodnetwork.com/recipes/food-network-kitchens/chicken-parmesan-recipe2.html">
-    		<img
-    			src="public/images/chicken-parm.jpeg" 
-    			class="grid-img"/>
-    	</a>
-    	<p>Chick Parmesan</p>
-  	</div>
-  	<div class="column">
-  		<a target="_blank"
-    		href="http://www.food.com/recipe/panda-express-orange-chicken-103215">
-    		<img 
-    			src="public/images/orange-chicken.jpg" 
-    			class="grid-img"/>
-    	</a>
-    	<p>Orange Chicken</p>
-  	</div>
-  	<div class="column">
-  		<a target="_blank"
-    		href="http://www.food.com/recipe/delicious-nachos-supreme-206391">
-    		<img 
-    			src="public/images/nachos.jpg" 
-    			class="grid-img"/>
-    	</a>
-    	<p>Nachos Supreme</p>
-  	</div>
-  	<div class="column">
-  		<a target="_blank"
-    		href="http://www.food.com/recipe/the-perfect-burger-92021">
-    		<img 
-    			src="public/images/burger.jpg" 
-    			class="grid-img"/>
-    	</a>
-    	<p>Perfect Burger</p>
-  	</div>
-  	<div class="column">
-  	</div>
+<div ng-hide="hideDefault">
+  <h1 class="title is-2 has-text-centered header-popular">Popular eats</h1>
+  <h1 class="title is-5 has-text-centered">Top picks of trending recipes</h1>
+  <div class="flex-container">
+    <div ng-repeat="p in popular" class="task-col">
+      <img ng-click="goToRecipe(p)" ng-src="{{p.image_url}}" class="grid-img"/>
+      <p class="has-text-centered">{{p.title}}</p>
+    </div>
+  </div>
 </div>
-
+<!--LOADER-->
+<div ng-hide="!showLoader" class="load">
+  <div id="loadFacebookG">
+  <div id="blockG_1" class="facebook_blockG"></div>
+  <div id="blockG_2" class="facebook_blockG"></div>
+  <div id="blockG_3" class="facebook_blockG"></div>
+  </div>
+</div>
+<!--RESULTS-->
+<div ng-hide='!showMessage'>
+  <h1 class="title is-2 has-text-centered header-popular">Results</h1>
+  <h1 class="title is-5 has-text-centered">Here are the recipes found with "{{q}}"</h1>
+</div>
+<div class="flex-container">
+  <div ng-repeat="r in recipes" class="task-col">
+    <img ng-click="goToRecipe(r)" ng-src="{{r.image_url}}" class="grid-img" />
+    <p class="has-text-centered">{{r.title}}</p>
+  </div>
+</div>
+<!--PAGINATION-->
+<h1 class="title is-5 has-text-centered">
+  <span ng-hide="!previous" ng-click="pagPrevious()">Previous |</span> 
+  <span ng-hide="!next" ng-click="pagNext()">Next</span>
+</h1>
 </div>
