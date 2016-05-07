@@ -50,8 +50,30 @@
   </div>
 </div>
 <!--PAGINATION-->
-<h1 class="title is-5 has-text-centered">
-  <span ng-hide="!previous" ng-click="pagPrevious()">Previous |</span> 
-  <span ng-hide="!next" ng-click="pagNext()">Next</span>
+<h1 class="title is-5 has-text-centered pagNav">
+  <span ng-hide="!previous" ng-click="pagPrevious()" class="nav">Previous </span>
+  <span ng-hide="!previous">|</span>
+  <span ng-hide="!next" ng-click="pagNext()" class="nav">Next</span>
 </h1>
+<!--FOOTER-->
+<div class="ftr">
+  <div class="columns">
+    <div class="column is-one-third">
+      <h1 class="title is-3 white space-left nltr-hdr">Rapid Recipe Newsletter</h1>
+      <p class="space-left nltr-msg">Get tasty recipes sent to you every week!</p>
+    </div>
+    <div class="column is-two-thirds space-left">
+      <p class="control has-addons subscribe-input">
+        <input
+          ng-model="email.text" 
+          class="input is-large" 
+          type="text" 
+          placeholder="Enter Email...">
+        <a id="subscribe-btn" class="button is-large" ng-click="subscribe(email)">Subscribe</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+
 </div>

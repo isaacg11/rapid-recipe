@@ -8,7 +8,9 @@ html, body {
 .hide{
 	height: 0px !important;
 }
-
+.space-left{
+	margin-left: 50px;
+}
 /*HOME PAGE*/
 .bg-cover{
 	padding-top: 150px;
@@ -52,6 +54,13 @@ html, body {
 	display: block;
 	position: relative;
 	margin:auto;
+}
+.pagNav{
+	margin-bottom: 40px;
+	cursor: pointer;
+}
+.nav:hover{
+	color: #ff6600;
 }
 
 /*LOADING ANIMATION*/
@@ -174,4 +183,21 @@ html, body {
 		-moz-transform:scale(0.7);
 		opacity:0.1;
 	}
+}
+
+.ftr{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color: #ff8533;
+	color: #fff;
+}
+.nltr-hdr{
+	margin-bottom: 0px !important;
+}
+.nltr-msg{
+	font-size: 15px;
+	font-weight: 200px;
+}
+.subscribe-input{
+	width: 90%;
 }

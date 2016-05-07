@@ -23,7 +23,6 @@
     $window
     )
   {
-
 //VARS
     $scope.popular = [
       {title: "Chick Parmesan",
@@ -55,7 +54,7 @@
     var page = 1;
     var data;
 
-  //SEARCH FOR RECIPE
+//SEARCH FOR RECIPE
     $scope.search = function(query) {
       $scope.hideDefault = true;
       $scope.showLoader = true;
@@ -74,12 +73,12 @@
         $scope.next = true;
       });
     };
-  //GO TO RECIPE SOURCE
+//GO TO RECIPE SOURCE
     $scope.goToRecipe = function(recipe) {
       window.location = recipe.f2f_url;
     };
 
-  //PAGINATE - NEXT
+//PAGINATE - NEXT
     $scope.pagNext = function() {
       page = page + 1;
       data = {
@@ -96,10 +95,11 @@
         if(page > 1) {
           $scope.previous = true;
         }
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
       });
     };
 
-    //PAGINATE - PREVIOUS
+//PAGINATE - PREVIOUS
     $scope.pagPrevious = function() {
       page = page - 1;
       data = {
@@ -119,8 +119,22 @@
         else{
           $scope.previous = false;
         }
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
       });
     };
+//SUBSCRIBE
+    $scope.subscribe = function(email) {
+      document.getElementById('subscribe-btn').className = "button is-large is-loading";
+      var userEmail = {
+        email: email.text
+      };
 
+      User.newSubscription(userEmail).then(function(res){
+        $scope.email.text = "";
+        toastr.success('Signup Successful!');
+        document.getElementById('subscribe-btn').className = "button is-large";
+      });
+    };
+  
   }
   })();

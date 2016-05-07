@@ -9,21 +9,13 @@
 
   function User($http, $q, $window){
 	return {
-    	login : function(userInfo){
+    	newSubscription : function(email){
         var q = $q.defer();
-    		Stamplay.User.login(userInfo).then(function(res){
+    		Stamplay.Object('subscription').save(email).then(function(res){
         		q.resolve(res);
     		});	
         return q.promise;
     	},
-      signup : function(userInfo){
-        var q = $q.defer();
-        Stamplay.User.signup(userInfo).then(function(res){
-            q.resolve(res);
-        }); 
-        return q.promise;
-      }
-
 	};
 }
 })();
