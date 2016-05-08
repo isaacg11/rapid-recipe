@@ -5,6 +5,10 @@ html, body {
 .white{
 	color: #fff;
 }
+.gray{
+	background-color: #eeeeee;
+	color: #000000;
+}
 .hide{
 	height: 0px !important;
 }
@@ -185,7 +189,7 @@ html, body {
 	}
 }
 
-.ftr{
+.sb{
 	padding-top: 50px;
 	padding-bottom: 50px;
 	background-color: #ff8533;
@@ -200,4 +204,14 @@ html, body {
 }
 .subscribe-input{
 	width: 90%;
+}
+.ftr{
+	background-color: #eeeeee;
+}
+.contact-section{
+	padding-top: 30px;
+}
+.modal-ui{
+	background-color: #fff;
+	padding: 30px 30px 30px 30px;
 }

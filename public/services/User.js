@@ -16,6 +16,13 @@
     		});	
         return q.promise;
     	},
+      sendMessage : function(user){
+        var q = $q.defer();
+        Stamplay.Object('email').save(user).then(function(res){
+            q.resolve(res);
+        }); 
+        return q.promise;
+      },
 	};
 }
 })();

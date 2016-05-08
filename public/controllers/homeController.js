@@ -12,7 +12,6 @@
     "$stamplay",
     '$window'
   ];
-
   function homeController(
     Food, 
     User,
@@ -53,7 +52,6 @@
     $scope.next = false;
     var page = 1;
     var data;
-
 //SEARCH FOR RECIPE
     $scope.search = function(query) {
       $scope.hideDefault = true;
@@ -77,7 +75,6 @@
     $scope.goToRecipe = function(recipe) {
       window.location = recipe.f2f_url;
     };
-
 //PAGINATE - NEXT
     $scope.pagNext = function() {
       page = page + 1;
@@ -98,7 +95,6 @@
         document.body.scrollTop = document.documentElement.scrollTop = 0;
       });
     };
-
 //PAGINATE - PREVIOUS
     $scope.pagPrevious = function() {
       page = page - 1;
@@ -135,6 +131,24 @@
         document.getElementById('subscribe-btn').className = "button is-large";
       });
     };
-  
+//OPEN MODAL
+    $scope.contact = function() {
+      document.getElementById('contactModal').className = 'modal is-active';
+    };
+//CLOSE MODAL
+    $scope.close = function() {
+      document.getElementById('contactModal').className = 'modal';
+    };
+//SUBMIT MODAL
+    $scope.submit = function(user) {
+      User.sendMessage(user).then(function(res){
+        document.getElementById('contactModal').className = 'modal';
+        $scope.user.name = "";
+        $scope.user.email = "";
+        $scope.user.text = "";
+        toastr.success('Message Sent!');
+      });
+    };
+
   }
   })();
