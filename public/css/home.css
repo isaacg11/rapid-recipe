@@ -49,6 +49,13 @@ html, body {
 	align-content: center;
 	margin: calc(5% / 2);
 }
+@media only screen and (max-width: 400px) {
+	.task-col {
+	width:30%;
+	align-content: center;
+	margin: calc(3.33% / 2);
+	}
+}
 .load{
 	margin-top: 40px;
 }

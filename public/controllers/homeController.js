@@ -48,6 +48,7 @@
     $scope.recipes = $scope.recipes ? $scope.recipes: [];
     $scope.showLoader = false;
     $scope.showMessage = false;
+    $scope.showFooter = false;
     $scope.previous = false;
     $scope.next = false;
     var page = 1;
@@ -56,6 +57,8 @@
     $scope.search = function(query) {
       $scope.hideDefault = true;
       $scope.showLoader = true;
+      $scope.showFooter = true;
+
       
       data = {
         query : query.text,
@@ -66,6 +69,7 @@
         $scope.query.text = "";
         $scope.showLoader = false;
         $scope.showMessage = true;
+        $scope.showFooter = false;
         $scope.q = data.query;
         $scope.recipes = res.body.recipes;
         $scope.next = true;
@@ -149,6 +153,5 @@
         toastr.success('Message Sent!');
       });
     };
-
   }
   })();

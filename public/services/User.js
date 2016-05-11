@@ -19,7 +19,10 @@
       sendMessage : function(user){
         var q = $q.defer();
         Stamplay.Object('email').save(user).then(function(res){
-            q.resolve(res);
+          q.resolve(res);
+        },
+        function(err) {
+          toastr.error('There was an error, please fill out the form and try again');
         }); 
         return q.promise;
       },

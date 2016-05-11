@@ -56,89 +56,106 @@
   <span ng-hide="!next" ng-click="pagNext()" class="nav">Next</span>
 </h1>
 <!--SUBSCRIBE-->
-<div class="sb">
-  <div class="columns">
-    <div class="column is-one-third">
-      <h1 class="title is-3 white space-left nltr-hdr">Rapid Recipe Newsletter</h1>
-      <p class="space-left nltr-msg">Get tasty recipes sent to you every week!</p>
-    </div>
-    <div class="column is-two-thirds space-left">
-      <p class="control has-addons subscribe-input">
-        <input
-          ng-model="email.text" 
-          class="input is-large" 
-          type="text" 
-          placeholder="Enter Email...">
-        <a id="subscribe-btn" class="button is-large" ng-click="subscribe(email)">Subscribe</a>
-      </p>
-    </div>
-  </div>
-</div>
-<!--FOOTER-->
-<footer class="footer ftr">
-  <p class="has-text-centered">
-    @2016 Rapid Recipe | Powered by 
-    <a target="_blank" href="http://food2fork.com">food2fork.com</a>
-  </p>
-  <div class="columns">
-    <div class="has-text-centered column is-one-third is-offset-one-third contact-section">
-      <a class="button has-text-centered" ng-click="contact()">
-        <span>Contact Us</span>
-      </a>
-      <a class="button has-text-centered">
-        <span class="icon">
-        <i class="fa fa-github"></i>
-        </span>
-        <span>GitHub</span>
-      </a>
-      <a class="button has-text-centered">
-        <span class="icon">
-        <i class="fa fa-twitter"></i>
-        </span>
-        <span>Twitter</span>
-      </a>
-    </div>
-  </div>
-</footer>
-<!--MODAL-->
-<div id="contactModal" class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-container">
-    <div class="modal-content modal-ui">
-      <h1 class="title is-4">Contact Us</h1>
-      <div class="control is-horizontal">
-        <div class="control is-grouped">
-          <input 
-            ng-model="user.name"
+<div ng-hide="showFooter">
+  <div class="sb">
+    <div class="columns">
+      <div class="column is-one-third">
+        <h1 class="title is-3 white space-left nltr-hdr">Rapid Recipe Newsletter</h1>
+        <p class="space-left nltr-msg">Get tasty recipes sent to you every week!</p>
+      </div>
+      <div class="column is-two-thirds space-left">
+        <p class="control has-addons subscribe-input">
+          <input
+            ng-model="email.text" 
             class="input is-large" 
             type="text" 
-            placeholder="Name">
-          <input 
-            ng-model="user.email"
-            class="input is-large" 
-            type="email" 
-            placeholder="Email">
-        </div>
-      </div>
-      <div class="control is-horizontal">
-        <div class="control">
-          <textarea
-            ng-model="user.text" 
-            class="textarea is-large" 
-            placeholder="Text goes here...">
-          </textarea>
-        </div>
-      </div>
-      <div class="control is-horizontal">
-        <div class="control">
-          <a class="button has-text-centered is-large gray" ng-click="submit(user)">
-            <span>Submit</span>
+            placeholder="Enter Email..."
+            ng-required="true">
+          <a
+            ng-disabled="!email.text" 
+            id="subscribe-btn" 
+            class="button is-large" 
+            ng-click="subscribe(email)">Subscribe
           </a>
-        </div>
+        </p>
       </div>
     </div>
   </div>
-  <button class="modal-close" ng-click="close()"></button>
+<!--FOOTER-->
+  <footer class="footer ftr">
+    <p class="has-text-centered">
+      @2016 Rapid Recipe | Powered by 
+      <a target="_blank" href="http://food2fork.com">food2fork.com</a>
+    </p>
+    <div class="columns">
+      <div class="has-text-centered column is-one-third is-offset-one-third contact-section">
+        <a class="button has-text-centered" ng-click="contact()">
+          <span>Contact Us</span>
+        </a>
+        <a
+          target="_blank" 
+          class="button has-text-centered" 
+          href="https://github.com/isaacg11/rapid-recipe">
+          <span class="icon">
+            <i class="fa fa-github"></i>
+          </span>
+          <span>GitHub</span>
+        </a>
+        <a 
+          class="button has-text-centered" 
+          href="https://twitter.com/Rapid_Recipe" 
+          target="_blank">
+          <span class="icon">
+            <i class="fa fa-twitter"></i>
+          </span>
+          <span>Twitter</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+<!--MODAL-->
+  <div id="contactModal" class="modal">
+    <div class="modal-background"></div>
+      <div class="modal-container">
+        <div class="modal-content modal-ui">
+          <h1 class="title is-4">Contact Us</h1>
+          <div class="control is-horizontal">
+            <div class="control is-grouped">
+              <input 
+                ng-model="user.name"
+                class="input is-large" 
+                type="text" 
+                placeholder="Your Name...">
+              <input 
+                ng-model="user.email"
+                class="input is-large" 
+                type="email" 
+                placeholder="Your Email...">
+            </div>
+          </div>
+          <div class="control is-horizontal">
+            <div class="control">
+              <textarea
+                ng-model="user.text" 
+                class="textarea is-large" 
+                placeholder="Message...">
+              </textarea>
+            </div>
+          </div>
+          <div class="control is-horizontal">
+            <div class="control">
+              <a 
+                class="button has-text-centered is-large gray" 
+                ng-click="submit(user)" 
+                ng-disabled="!user">
+                <span>Submit</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="modal-close" ng-click="close()"></button>
+  </div>
 </div>
 
 </div>
