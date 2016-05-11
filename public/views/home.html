@@ -3,7 +3,11 @@
 <div class="bg-cover">
 	<div class="columns">
 		<div class="column is-6 is-offset-3">
-			<h1 class="title is-1 has-text-centered white"><img src="public/images/chef-hat.png" class="chef-hat"/> Rapid Recipe</h1>
+			<h1 class="title is-1 has-text-centered white">
+        <img 
+          src="public/images/chef-hat.png" 
+          class="chef-hat hide-on-mobile"/> Rapid Recipe
+      </h1>
 			<h5 class="title is-5 has-text-centered white">Quickly find a variety of delicous recipes for your next meal!</h5>
 			<form ng-submit="search(query)">
 				<p class="control has-icon has-icon-right search-input">
@@ -64,20 +68,23 @@
         <p class="space-left nltr-msg">Get tasty recipes sent to you every week!</p>
       </div>
       <div class="column is-two-thirds space-left">
-        <p class="control has-addons subscribe-input">
-          <input
+        <form ng-submit="subscribe(email)">
+          <p class="control has-addons subscribe-input">
+            <input
             ng-model="email.text" 
             class="input is-large" 
             type="text" 
             placeholder="Enter Email..."
-            ng-required="true">
-          <a
+            ng-required="true"/>
+            <a
+            ng-click="subscribe(email)"
             ng-disabled="!email.text" 
             id="subscribe-btn" 
             class="button is-large" 
-            ng-click="subscribe(email)">Subscribe
-          </a>
-        </p>
+            type="submit">Subscribe
+            </a>
+          </p>
+        </form>
       </div>
     </div>
   </div>
